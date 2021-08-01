@@ -16,8 +16,8 @@ public class Bird : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<LineRenderer>().SetPosition(0, _initialPosition);
-        GetComponent<LineRenderer>().SetPosition(1, transform.position);
+        GetComponent<LineRenderer>().SetPosition(0, transform.position);
+        GetComponent<LineRenderer>().SetPosition(1, _initialPosition); 
 
         if (_birdWasLaunched && GetComponent<Rigidbody2D>().velocity.magnitude <= 0.1)
         {
@@ -26,7 +26,7 @@ public class Bird : MonoBehaviour
         if (transform.position.y > 10 ||
             transform.position.y < -10 ||
             transform.position.x > 17 ||
-            transform.position.x < -17 ||
+            transform.position.x < -20 ||
             _timeSittingAround > 3)
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
